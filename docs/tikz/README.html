@@ -1,0 +1,458 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Description of the TikZ Sphinx Extension &mdash; mmR2T3 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=01f34227"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            mmR2T3
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../rst/testing.html">Test Page - not for publication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst/zbibliography.html">Bibliography</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">mmR2T3</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Description of the Ti<em>k</em>Z Sphinx Extension</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tikz/README.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="description-of-the-tikz-sphinx-extension">
+<h1>Description of the Ti<em>k</em>Z Sphinx Extension<a class="headerlink" href="#description-of-the-tikz-sphinx-extension" title="Link to this heading"></a></h1>
+<p>This extension to <a class="reference external" href="http://www.sphinx-doc.org">Sphinx</a> enables the use of the
+PGF/Ti<em>k</em>Z LaTeX package to draw nice pictures.  (See <a class="reference external" href="http://www.ctan.org/tex-archive/graphics/pgf/">CTAN</a> or <a class="reference external" href="http://sourceforge.net/projects/pgf/">sourceforge</a>; the manual is, e.g., <a class="reference external" href="http://mirrors.ctan.org/graphics/pgf/base/doc/pgfmanual.pdf">here</a>.
+Also have a look at contributions such as <a class="reference external" href="http://www.ctan.org/tex-archive/graphics/pgf/contrib/pgfplots/">pgfplots</a>.)</p>
+<p>Use the extension at your own risk.  Anything might change in future versions
+without further notice.</p>
+<hr class="docutils" />
+<dl class="field-list simple">
+<dt class="field-odd">Version<span class="colon">:</span></dt>
+<dd class="field-odd"><p>0.4.20</p>
+</dd>
+<dt class="field-even">Author<span class="colon">:</span></dt>
+<dd class="field-even"><p>Christoph Reller <code class="docutils literal notranslate"><span class="pre">christoph.reller&#64;gmail.com</span></code></p>
+</dd>
+<dt class="field-odd">License<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="http://opensource.org/licenses/bsd-license.html">BSD License</a></p>
+</dd>
+<dt class="field-even">Git Repository<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://bitbucket.org/philexander/tikz">https://bitbucket.org/philexander/tikz</a></p>
+</dd>
+<dt class="field-odd">PyPI Package<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="http://pypi.python.org/pypi/sphinxcontrib-tikz">http://pypi.python.org/pypi/sphinxcontrib-tikz</a></p>
+</dd>
+<dt class="field-even">Documentation<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="http://sphinxcontrib-tikz.readthedocs.io">http://sphinxcontrib-tikz.readthedocs.io</a></p>
+</dd>
+</dl>
+<section id="prerequisites-and-configuration">
+<h2>Prerequisites and Configuration<a class="headerlink" href="#prerequisites-and-configuration" title="Link to this heading"></a></h2>
+<section id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h3>
+<p>This extension relies on two software packages being installed on your computer:</p>
+<ol class="upperalpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">latex</span></code> with the <code class="docutils literal notranslate"><span class="pre">tikz</span></code> and the <code class="docutils literal notranslate"><span class="pre">amsmath</span></code> packages</p></li>
+<li><p>A software package that is able to convert a PDF to an image.  Currently,
+this extension supports four different ways of doing this conversion.  We
+call them conversion “suites” and list for each suite what must be installed
+on your computer: (Only one such suite need be installed.)</p>
+<ul class="simple">
+<li><p>pdf2svg suite: <code class="docutils literal notranslate"><span class="pre">pdf2svg</span></code></p></li>
+<li><p>Netpbm suite: <code class="docutils literal notranslate"><span class="pre">pdftoppm</span></code> (part of the Poppler pdf library) and <code class="docutils literal notranslate"><span class="pre">pnmtopng</span></code>
+(part of the Netpbm package)</p></li>
+<li><p>ImageMagick suite: <code class="docutils literal notranslate"><span class="pre">pdftoppm</span></code> (part of the Poppler pdf library) and
+<code class="docutils literal notranslate"><span class="pre">convert</span></code> (part of the ImageMagick package)</p></li>
+<li><p>GhostScript suite: <code class="docutils literal notranslate"><span class="pre">ghostscript</span></code></p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="ubuntu-linux">
+<h3>Ubuntu Linux<a class="headerlink" href="#ubuntu-linux" title="Link to this heading"></a></h3>
+<p>For <strong>Ubuntu Linux</strong> you roughly have to make sure that the following packages
+are installed:</p>
+<ol class="upperalpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">texlive</span></code>, <code class="docutils literal notranslate"><span class="pre">texlive-pictures</span></code>, and <code class="docutils literal notranslate"><span class="pre">texlive-latex-extra</span></code> (and maybe
+more LaTeX packages)</p></li>
+<li><p>Depending on the chosen conversion suite the following package(s) have to be
+installed:</p>
+<ul class="simple">
+<li><p>pdf2svg suite: <code class="docutils literal notranslate"><span class="pre">pdf2svg</span></code></p></li>
+<li><p>Netpbm suite: <code class="docutils literal notranslate"><span class="pre">poppler-utils</span></code> and <code class="docutils literal notranslate"><span class="pre">netpbm</span></code></p></li>
+<li><p>ImageMagick suite: <code class="docutils literal notranslate"><span class="pre">poppler-utils</span></code> and <code class="docutils literal notranslate"><span class="pre">imagemagick</span></code></p></li>
+<li><p>GhostScript suite: <code class="docutils literal notranslate"><span class="pre">ghostscript</span></code></p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="mac-os-x">
+<h3>Mac OS X<a class="headerlink" href="#mac-os-x" title="Link to this heading"></a></h3>
+<p>For <strong>Mac OS X</strong> a possible way of getting this extension working is as follows:</p>
+<ol class="upperalpha simple">
+<li><p>Install the <a class="reference external" href="http://tug.org/mactex/">MacTeX</a> LaTeX distribution which per
+default comes with the <code class="docutils literal notranslate"><span class="pre">tikz</span></code> package.</p></li>
+<li><p>To install one of the conversion suites you can install <a class="reference external" href="https://brew.sh/">homebrew</a> and then use homebrew to install the package(s) listed
+under B. as above for Ubuntu Linux.</p></li>
+</ol>
+</section>
+<section id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Link to this heading"></a></h3>
+<p>For <strong>Windows</strong> do the following:</p>
+<ol class="upperalpha">
+<li><p>Install the <a class="reference external" href="http://miktex.org/">MiKTeX</a> LaTeX distribution and include
+the <code class="docutils literal notranslate"><span class="pre">tikz</span></code> package when installing.</p></li>
+<li><p>Depending on the chosen conversion suite, you have to install the following:</p>
+<ul>
+<li><p>pdf2svg suite:</p>
+<p>Get the Windows binaries from <a class="reference external" href="https://github.com/jalios/pdf2svg-windows">GitHub</a> copy all the files to some
+directory and add this directory to the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> environment variable.</p>
+</li>
+<li><p>Netpbm suite:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.foolabs.com/xpdf/download.html">Xpdf package</a></p></li>
+<li><p><a class="reference external" href="http://gnuwin32.sourceforge.net/packages/netpbm.htm">NetPbm for Windows package</a></p></li>
+</ul>
+<p>If you don’t want to install the full packages above, you can copy the
+following files to some directory and add this directory to the <code class="docutils literal notranslate"><span class="pre">PATH</span></code>
+environment variable:</p>
+<p>From Xpdf:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pdftoppm</span></code></p></li>
+</ul>
+<p>From NetPbm:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pnmtopng.exe</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">libnetpbm10.dll</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">libpng13.dll</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rgb.txt</span></code></p></li>
+</ul>
+<p>Also, you need to create a new environment variable
+<code class="docutils literal notranslate"><span class="pre">RGBDEF=C:\TikzSphinx\rgb.txt</span></code> assuming you copy the files to the
+<code class="docutils literal notranslate"><span class="pre">C:\TikzSphinx</span></code> directory.</p>
+</li>
+<li><p>ImageMagick suite:</p>
+<p>Install the <a class="reference external" href="http://www.foolabs.com/xpdf/download.html">Xpdf package</a>
+(same as for the Netpbm suite) and install ImageMagick from <a class="reference external" href="http://www.imagemagick.org/script/binary-releases.php">here</a>.</p>
+</li>
+<li><p>GhostScript suite:</p>
+<p>Get the GhostScript binary from <a class="reference external" href="https://ghostscript.com/download/gsdnld.html">here</a>, copy it to some
+directory and add this directory to the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> environment variable.</p>
+</li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="configuration">
+<span id="id1"></span><h3>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h3>
+<p>If you have installed the Ti<em>k</em>z Sphinx extension e.g. using <a class="reference external" href="http://pypi.python.org/pypi/sphinxcontrib-tikz">PyPI</a>, then you have to load the
+extension in the Sphinx project configuration file <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> by:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sphinxcontrib.tikz&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Additionally, the following configuration values are supported:</p>
+<ul>
+<li><p>Choose the image processing <code class="docutils literal notranslate"><span class="pre">‹suite›</span></code>, either <code class="docutils literal notranslate"><span class="pre">'pdf2svg'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Netpbm'</span></code>,
+<code class="docutils literal notranslate"><span class="pre">'ImageMagick'</span></code>, <code class="docutils literal notranslate"><span class="pre">'GhostScript'</span></code> (<code class="docutils literal notranslate"><span class="pre">'pdf2svg'</span></code> by default):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tikz_proc_suite</span> <span class="o">=</span> <span class="err">‹</span><span class="n">suite</span><span class="err">›</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>If you want your documentation to be built on <a class="reference external" href="http://readthedocs.org">http://readthedocs.org</a>, you
+have to choose <code class="docutils literal notranslate"><span class="pre">GhostScript</span></code>.</p></li>
+<li><p>All suites produce png images, excepted <code class="docutils literal notranslate"><span class="pre">'pdf2svg'</span></code> which produces svg.</p></li>
+</ul>
+</div>
+</li>
+<li><p>Choose an image resolution (ignored if <code class="docutils literal notranslate"><span class="pre">tikz_proc_suite</span></code> is <code class="docutils literal notranslate"><span class="pre">'pdf2svg'</span></code>,
+default <code class="docutils literal notranslate"><span class="pre">184</span></code>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tikz_resolution</span> <span class="o">=</span> <span class="err">‹</span><span class="n">number</span><span class="err">›</span>
+</pre></div>
+</div>
+</li>
+<li><p>Enable/disable transparent graphics (enabled by default):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tikz_transparent</span> <span class="o">=</span> <span class="err">‹</span><span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span><span class="err">›</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">‹string›</span></code> to the LaTeX preamble used for building the Ti<em>k</em>Z
+picture:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tikz_latex_preamble</span> <span class="o">=</span> <span class="err">‹</span><span class="n">string</span><span class="err">›</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">tikz_latex_preamble</span></code> is not configured, then the LaTeX preamble
+automatically falls back to <code class="docutils literal notranslate"><span class="pre">latex_elements['preamble']</span></code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>LaTeX preamble code is best written as a raw string <code class="docutils literal notranslate"><span class="pre">r'‹LaTeX</span> <span class="pre">code›'</span></code>
+or a raw multi-line string <code class="docutils literal notranslate"><span class="pre">r'''‹multiple</span> <span class="pre">lines</span> <span class="pre">of</span> <span class="pre">LaTeX</span> <span class="pre">code›'''</span></code>.  This
+tells Python to disable transformation of backslash escape sequences such as
+<code class="docutils literal notranslate"><span class="pre">\n</span></code> into special characters such as newline.</p>
+</div>
+</li>
+<li><p>Copy files to the directory that is used for building the Ti<em>k</em>Z picture,
+analogous to <code class="docutils literal notranslate"><span class="pre">latex_additional_files</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">`</span><span class="n">tikz_additional_files</span> <span class="o">=</span> <span class="err">‹</span><span class="nb">list</span> <span class="n">of</span> <span class="n">strings</span><span class="err">›</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">tikz_additional_files</span></code> is not configured, then the list of files to
+be copied automatically falls back to <code class="docutils literal notranslate"><span class="pre">latex_additional_files</span></code>.</p>
+</div>
+</li>
+<li><p>To support <code class="docutils literal notranslate"><span class="pre">\includegraphics{‹file›}</span></code> within a Ti<em>k</em>Z picture, you have to
+configure the directory path(s) where the <code class="docutils literal notranslate"><span class="pre">‹file›</span></code>s reside by setting:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tikz_includegraphics_path</span> <span class="o">=</span> <span class="s1">&#39;‹relative path›&#39;</span>
+</pre></div>
+</div>
+<p>or, for multiple directories:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tikz_includegraphics_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;‹relative path 1›&#39;</span><span class="p">,</span> <span class="s1">&#39;‹relative path 2›, ...]</span>
+</pre></div>
+</div>
+<p>In the above, <code class="docutils literal notranslate"><span class="pre">‹relative</span> <span class="pre">path›</span></code> is a path relative to the root source directory.
+Within a path, directories must be separated with <code class="docutils literal notranslate"><span class="pre">/</span></code> not <code class="docutils literal notranslate"><span class="pre">\</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Internally, this option results in a <code class="docutils literal notranslate"><span class="pre">\graphicspath{...}</span></code> LaTeX
+command, of which only one is permitted per LaTeX document.  If you use this
+command in your <code class="docutils literal notranslate"><span class="pre">tikz_latex_preamble</span></code> or in <code class="docutils literal notranslate"><span class="pre">latex_elements['preamble']</span></code>,
+then don’t set <code class="docutils literal notranslate"><span class="pre">tikz_includegraphics_path</span></code>.</p>
+</div>
+</li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">\usetikzlibrary{‹string›}</span></code> to the LaTeX preamble used for building the
+Ti<em>k</em>Z picture:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tikz_tikzlibraries</span> <span class="o">=</span> <span class="err">‹</span><span class="n">string</span><span class="err">›</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to use the <code class="docutils literal notranslate"><span class="pre">latex</span></code> target, then you have to take care to
+include in <code class="docutils literal notranslate"><span class="pre">tikz_libraries</span></code> any <code class="docutils literal notranslate"><span class="pre">‹tikz</span> <span class="pre">libraries›</span></code> given to the <code class="docutils literal notranslate"><span class="pre">libs</span></code>
+option of the <code class="docutils literal notranslate"><span class="pre">tikz</span></code> directive (see <a class="reference internal" href="#usage"><span class="std std-ref">Usage</span></a>)</p>
+</div>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to make use of the Ti<em>k</em>Z externalization library for
+the LaTeX build output, then you may want to change the line:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">LATEXOPTS</span> <span class="err">?</span><span class="o">=</span>
+</pre></div>
+</div>
+<p>in Sphinx LaTeX Makefile template
+(<code class="docutils literal notranslate"><span class="pre">‹yourvirtualenv›/lib/python‹x›.‹y›/site-packages/sphinx/texinputs/Makefile_t</span></code>)
+to:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">LATEXOPTS</span> <span class="err">?</span><span class="o">=</span> <span class="s2">&quot;-shell-escape&quot;</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="usage">
+<span id="id2"></span><h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
+<p>The extension adds a <code class="docutils literal notranslate"><span class="pre">tikz</span></code>-directive and a <code class="docutils literal notranslate"><span class="pre">tikz</span></code>-role.</p>
+<p>The <strong>tikz-directive</strong> can be used in two ways:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">tikz</span><span class="p">::</span> ‹tikz code, potentially broken
+   across lines›
+   <span class="nc">:libs:</span>   ‹tikz libraries›
+   <span class="nc">:xscale:</span> ‹integer value between 0 and 100›
+   <span class="nc">:stringsubst:</span>
+   <span class="nc">:align:</span>  ‹left|center|right›
+   <span class="nc">:alt:</span>    ‹alternative text›
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">tikz</span><span class="p">::</span> ‹caption, potentially broken
+   across lines›
+   <span class="nc">:libs:</span>   ‹tikz libraries›
+   <span class="nc">:xscale:</span> ‹integer value between 0 and 100›
+   <span class="nc">:stringsubst:</span>
+   <span class="nc">:align:</span>  ‹left|center|right›
+   <span class="nc">:alt:</span>    ‹alternative text›
+
+   ‹tikz code, potentially broken
+   across lines›
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">‹caption›</span></code> is optional, but if present it is printed as a picture caption
+below the picture.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">:libs:</span></code> option expects its argument <code class="docutils literal notranslate"><span class="pre">‹tikz</span> <span class="pre">libraries›</span></code> to be a comma
+separated list of Ti<em>k</em>z libraries to use.  If you want to build the LaTeX
+target then make sure to add these libraries to the configuration value
+<code class="docutils literal notranslate"><span class="pre">tikz_tikzlibraries</span></code> in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">:xscale:</span></code> option expects its argument <code class="docutils literal notranslate"><span class="pre">‹integer</span> <span class="pre">value</span> <span class="pre">between</span> <span class="pre">0</span> <span class="pre">and</span> <span class="pre">100›</span></code>
+a percentage that determines the scaling factor relative to the content width.
+For the <code class="docutils literal notranslate"><span class="pre">latex</span></code> target, this is <code class="docutils literal notranslate"><span class="pre">\columnwidth</span></code>, and for the <code class="docutils literal notranslate"><span class="pre">html</span></code> target,
+the percentage is added to the generated <code class="docutils literal notranslate"><span class="pre">&lt;\img&gt;</span></code> as a <code class="docutils literal notranslate"><span class="pre">width</span></code> attribute.
+The aspect ratio of the image is preserved.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">:stringsubst:</span></code> option enables the following string substitution in the
+<code class="docutils literal notranslate"><span class="pre">‹tikz</span> <span class="pre">code›</span></code>:  Before processing the <code class="docutils literal notranslate"><span class="pre">‹tikz</span> <span class="pre">code›</span></code> the string <code class="docutils literal notranslate"><span class="pre">$wd</span></code> or
+<code class="docutils literal notranslate"><span class="pre">$(wd)</span></code> is replaced by the project root directory.  This is convenient when
+referring to some source file in the LaTeX code.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">:align:</span></code> option expects <code class="docutils literal notranslate"><span class="pre">left</span></code>, <code class="docutils literal notranslate"><span class="pre">center</span></code>, or <code class="docutils literal notranslate"><span class="pre">right</span></code> to specify the
+horizontal alignment of the image, equivalent to the HTML “text-align” CSS
+property.  The default value is <code class="docutils literal notranslate"><span class="pre">center</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">:alt:</span></code> option specifies the alternative text, which is a short description
+of the image, displayed by applications that cannot display images, or spoken by
+applications for visually impaired users. The default value is “Figure made with
+TikZ.”</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">‹tikz</span> <span class="pre">code›</span></code> is code according to the Ti<em>k</em>Z LaTeX package.  It
+behaves as if inside a <code class="docutils literal notranslate"><span class="pre">tikzpicture</span></code> environment.  The presence of
+<code class="docutils literal notranslate"><span class="pre">\begin{tikzpicture}</span></code> and <code class="docutils literal notranslate"><span class="pre">\end{tikzpicture}</span></code>, or any other environment
+starting with <code class="docutils literal notranslate"><span class="pre">tikz...</span></code> is optional. When the environment is present, any TeX
+code preceding it will be included between <code class="docutils literal notranslate"><span class="pre">\begin{document}</span></code> and the
+environment. This is useful in certain scenarios such as usage of the
+<code class="docutils literal notranslate"><span class="pre">tikz-3dplot</span></code> package.</p>
+<p>Alternatively to providing the <code class="docutils literal notranslate"><span class="pre">‹tikz</span> <span class="pre">code›</span></code>, the <code class="docutils literal notranslate"><span class="pre">:include:</span></code> option can be
+used to import the code from a file:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">tikz</span><span class="p">::</span>‹caption, potentially broken
+   across lines›
+   <span class="nc">:libs:</span>    ‹tikz libraries›
+   <span class="nc">:include:</span> ‹filename›
+   <span class="nc">:xscale:</span>  ‹integer value between 0 and 100›
+   <span class="nc">:stringsubst:</span>
+   <span class="nc">:align:</span>   ‹left|center|right›
+   <span class="nc">:alt:</span>     ‹alternative text›
+</pre></div>
+</div>
+<p>The <strong>tikz-role</strong> is used as follows:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="na">:tikz:</span><span class="nv">`‹tikz code›`</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">‹tikz</span> <span class="pre">code›</span></code> is code according to the Ti<em>k</em>z LaTeX package.  It
+behaves as if inside a <code class="docutils literal notranslate"><span class="pre">\tikz</span></code> macro.</p>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These examples only render in a Sphinx project with a proper
+configuration of the Ti<em>k</em>z Sphinx extension.</p>
+</div>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">tikz</span><span class="p">::</span> [&gt;=latex&#39;,dotted,thick] \draw[-&gt;] (0,0) -- (1,1) -- (1,0)
+   -- (2,0);
+   <span class="nc">:libs:</span> arrows
+</pre></div>
+</div>
+<div class="figure" style="text-align: center"><p><img  src="../_images/tikz-9623d8fec8222981fc4dda796d12608e10225c41.png" alt="Figure made with TikZ" /></p>
+</div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">tikz</span><span class="p">::</span> An Example TikZ Directive with Caption
+   <span class="nc">:align:</span> left
+
+   \draw[thick,rounded corners=8pt]
+   (0,0)--(0,2)--(1,3.25)--(2,2)--(2,0)--(0,2)--(2,2)--(0,0)--(2,0);
+</pre></div>
+</div>
+<div class="figure" id="id3" style="text-align: left"><p><img  src="../_images/tikz-a2b4cec0987802fd3f9b5d9d1fbdd64020e114cb.png" alt="Figure made with TikZ" /></p>
+<p><span class="caption-text">An Example TikZ Directive with Caption</span></p>
+</div><div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>An example role :tikz:`[thick] \node[blue,draw] (a) {A};
+\node[draw,dotted,right of=a] {B} edge[&lt;-] (a);`
+</pre></div>
+</div>
+<p>An example role <img src="../_images/tikz-9673fac5b36c5158dbe17d388171b35e3bd2bc17.png"/></p>
+<p>Example of a Ti<em>k</em>z picture included from a file:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">tikz</span><span class="p">::</span>
+   <span class="nc">:include:</span> example.tikz
+   <span class="nc">:align:</span> right
+</pre></div>
+</div>
+</section>
+<section id="caveats">
+<h2>Caveats<a class="headerlink" href="#caveats" title="Link to this heading"></a></h2>
+<p>If you use the <code class="docutils literal notranslate"><span class="pre">tikz</span></code> directive inside of a table or a sidebar and you specify
+a caption then the LaTeX target built by the sphinx builder will not compile.
+This is because, as soon as you specify a caption, the <code class="docutils literal notranslate"><span class="pre">tikzpicture</span></code>
+environment is set inside a <code class="docutils literal notranslate"><span class="pre">figure</span></code> environment and hence it is a float and
+cannot live inside a table or another float.</p>
+<p>If you enable <code class="docutils literal notranslate"><span class="pre">:stringsubst:</span></code> and you happen to have any LaTeX math expression
+starting with <code class="docutils literal notranslate"><span class="pre">wd</span></code> (i.e., you would like to write <code class="docutils literal notranslate"><span class="pre">$wd</span> <span class="pre">...</span></code> then you must
+insert some white space, e.g., <code class="docutils literal notranslate"><span class="pre">$w</span> <span class="pre">d</span> <span class="pre">...</span></code> to prevent string substitution.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Roie R. Black.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
