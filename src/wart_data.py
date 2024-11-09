@@ -1,3 +1,4 @@
+import math
 
 class Wart(object):
 
@@ -31,12 +32,19 @@ class Wart(object):
         self.m_v = self.m_x * self.m_l
         self.m_rho = self.w_m / self.m_v
         self.n_rho = self.m_v / self.n
-        
+       
+        #Calculate Breaking turns - Slusarskczyk
+
+        self.n_brk = 3727 * u.turn
+        self.K = self.n_brk/self.m_l *(self.w_m/self.m_l)**0.5
+        self.W = self.w_m/self.m_l
+        self.N = self.K * self.m_l/ self.W**0.5
+
         # flight data
         self.t = self.t_m + self.t_s
         self.n_avg = (self.n / self.t)
         self.w = self.w_m + self.w_a
-        self.H_e = self.H/(483* u.foot * (self.w_m/self.w))
+        self.H_e = self.H/(483*(self.w_m/self.w))
 
         result = {
             'H':  self.H,
@@ -52,6 +60,10 @@ class Wart(object):
             'n_rho': self.n_rho,
             'n_avg': self.n_avg,
             'H_e': self.H_e,
+            'n_brk': self.n_brk,
+            'k': self.K,
+            'W': self.W,
+            'N': self.N,
         }
         return result
         

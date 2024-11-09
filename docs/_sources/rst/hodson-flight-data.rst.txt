@@ -44,6 +44,25 @@ available for a given motor, and a variation of Don Slusarczyk's scheme to
 calculate the motor breaking winds. 
 
 Based on the formulas in this spreadsheet, the recorder motor length is actually twice the loop length. 
+
+Breaking turns
+==============
+
+Don Slusarczyk published an article on calculating the breaking turns of a rubber motor. His formulas were as follows:
+
+Given:
+
+    - n_br = break turns
+    - m_l = loop length * 2 
+    - m_w motor weight
+      
+The **K** factor is given as
+
+..  math::
+
+    l_l = m_l / 2
+    K =fact(n_{br}/l_l)\sqrt((m_w/l_l)) 
+
 Example Data
 ============
 
