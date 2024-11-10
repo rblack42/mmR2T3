@@ -14,7 +14,7 @@ a subsequent theoretical development dealing with the physics of rubber strip
 motors which are subjected to both stretching and winding to provide power for
 the model airplanes we fly. 
 
-..  image:: book/rst/_static/lpp.gif
+..  image:: book/_static/lpp.gif
     :align: center
     :width: 600
 
