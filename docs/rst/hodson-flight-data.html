@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Bibliography" href="zbibliography.html" />
-    <link rel="prev" title="Test Page - not for publication" href="testing.html" /> 
+    <link rel="prev" title="Winding the Motor" href="winding-the-motor.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -44,13 +44,16 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="testing.html">Test Page - not for publication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing-rubber.html">Testing Rubber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stretching-the-motor.html">Stretching the Motor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="winding-the-motor.html">Winding the Motor</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Hodson’s Flight Data</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#breaking-turns">Breaking turns</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#example-data">Example Data</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="zbibliography.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Test Page - not for publication</a></li>
 </ul>
 
         </div>
@@ -188,41 +191,50 @@ and the <em>Python</em> <em>units</em> package <strong>pint</strong>:</p>
 <span class="linenos">33</span>        <span class="bp">self</span><span class="o">.</span><span class="n">m_rho</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w_m</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_v</span>
 <span class="linenos">34</span>        <span class="bp">self</span><span class="o">.</span><span class="n">n_rho</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_v</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span>
 <span class="linenos">35</span>       
-<span class="linenos">36</span>        <span class="bp">self</span><span class="o">.</span><span class="n">n_brk</span> <span class="o">=</span> <span class="mf">45.259</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">inch</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">gram</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_l</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">w_m</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">m_l</span><span class="p">)</span>
-<span class="linenos">37</span>        <span class="c1"># flight data</span>
-<span class="linenos">38</span>        <span class="bp">self</span><span class="o">.</span><span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">t_m</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">t_s</span>
-<span class="linenos">39</span>        <span class="bp">self</span><span class="o">.</span><span class="n">n_avg</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="p">)</span>
-<span class="linenos">40</span>        <span class="bp">self</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w_m</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">w_a</span>
-<span class="linenos">41</span>        <span class="bp">self</span><span class="o">.</span><span class="n">H_e</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="o">/</span><span class="p">(</span><span class="mi">483</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">w_m</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">w</span><span class="p">))</span>
+<span class="linenos">36</span>        <span class="c1">#Calculate Breaking turns - Slusarskczyk</span>
+<span class="linenos">37</span>
+<span class="linenos">38</span>        <span class="bp">self</span><span class="o">.</span><span class="n">n_brk</span> <span class="o">=</span> <span class="mi">3727</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">turn</span>
+<span class="linenos">39</span>        <span class="bp">self</span><span class="o">.</span><span class="n">K</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_brk</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">m_l</span> <span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">w_m</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">m_l</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
+<span class="linenos">40</span>        <span class="bp">self</span><span class="o">.</span><span class="n">W</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w_m</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">m_l</span>
+<span class="linenos">41</span>        <span class="bp">self</span><span class="o">.</span><span class="n">N</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">K</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_l</span><span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">W</span><span class="o">**</span><span class="mf">0.5</span>
 <span class="linenos">42</span>
-<span class="linenos">43</span>        <span class="n">result</span> <span class="o">=</span> <span class="p">{</span>
-<span class="linenos">44</span>            <span class="s1">&#39;H&#39;</span><span class="p">:</span>  <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">,</span>
-<span class="linenos">45</span>            <span class="s1">&#39;Phi&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Phi</span><span class="p">,</span>
-<span class="linenos">46</span>            <span class="s1">&#39;w_m&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">w_m</span><span class="p">,</span>
-<span class="linenos">47</span>            <span class="s1">&#39;m_w&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_w</span><span class="p">,</span>
-<span class="linenos">48</span>            <span class="s1">&#39;m_t&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_t</span><span class="p">,</span>
-<span class="linenos">49</span>            <span class="s1">&#39;m_l&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_l</span><span class="p">,</span>
-<span class="linenos">50</span>            <span class="s1">&#39;m_x&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_x</span><span class="p">,</span>
-<span class="linenos">51</span>            <span class="s1">&#39;m_v&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_v</span><span class="p">,</span>
-<span class="linenos">52</span>            <span class="s1">&#39;m_rho&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_rho</span><span class="p">,</span>
-<span class="linenos">53</span>            <span class="s1">&#39;t&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">second</span><span class="p">),</span>
-<span class="linenos">54</span>            <span class="s1">&#39;n_rho&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_rho</span><span class="p">,</span>
-<span class="linenos">55</span>            <span class="s1">&#39;n_avg&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_avg</span><span class="p">,</span>
-<span class="linenos">56</span>            <span class="s1">&#39;H_e&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">H_e</span><span class="p">,</span>
-<span class="linenos">57</span>            <span class="s1">&#39;n_brk&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_brk</span><span class="p">,</span>
-<span class="linenos">58</span>        <span class="p">}</span>
-<span class="linenos">59</span>        <span class="k">return</span> <span class="n">result</span>
-<span class="linenos">60</span>        
-<span class="linenos">61</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="linenos">62</span>    <span class="kn">import</span> <span class="nn">pint</span>
-<span class="linenos">63</span>    <span class="n">u</span> <span class="o">=</span> <span class="n">pint</span><span class="o">.</span><span class="n">UnitRegistry</span><span class="p">()</span>
-<span class="linenos">64</span>    <span class="n">w</span> <span class="o">=</span> <span class="n">Wart</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
-<span class="linenos">65</span>    <span class="n">w</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
-<span class="linenos">66</span>    <span class="n">p</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">get_properties</span><span class="p">()</span>
-<span class="linenos">67</span>    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">p</span><span class="p">:</span>
-<span class="linenos">68</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">p</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="linenos">69</span>
-<span class="linenos">70</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motor Volume = </span><span class="si">{</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;m_v&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.6e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">43</span>        <span class="c1"># flight data</span>
+<span class="linenos">44</span>        <span class="bp">self</span><span class="o">.</span><span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">t_m</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">t_s</span>
+<span class="linenos">45</span>        <span class="bp">self</span><span class="o">.</span><span class="n">n_avg</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="p">)</span>
+<span class="linenos">46</span>        <span class="bp">self</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w_m</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">w_a</span>
+<span class="linenos">47</span>        <span class="bp">self</span><span class="o">.</span><span class="n">H_e</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="o">/</span><span class="p">(</span><span class="mi">483</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">w_m</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">w</span><span class="p">))</span>
+<span class="linenos">48</span>
+<span class="linenos">49</span>        <span class="n">result</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos">50</span>            <span class="s1">&#39;H&#39;</span><span class="p">:</span>  <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">,</span>
+<span class="linenos">51</span>            <span class="s1">&#39;Phi&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">Phi</span><span class="p">,</span>
+<span class="linenos">52</span>            <span class="s1">&#39;w_m&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">w_m</span><span class="p">,</span>
+<span class="linenos">53</span>            <span class="s1">&#39;m_w&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_w</span><span class="p">,</span>
+<span class="linenos">54</span>            <span class="s1">&#39;m_t&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_t</span><span class="p">,</span>
+<span class="linenos">55</span>            <span class="s1">&#39;m_l&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_l</span><span class="p">,</span>
+<span class="linenos">56</span>            <span class="s1">&#39;m_x&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_x</span><span class="p">,</span>
+<span class="linenos">57</span>            <span class="s1">&#39;m_v&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_v</span><span class="p">,</span>
+<span class="linenos">58</span>            <span class="s1">&#39;m_rho&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_rho</span><span class="p">,</span>
+<span class="linenos">59</span>            <span class="s1">&#39;t&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">second</span><span class="p">),</span>
+<span class="linenos">60</span>            <span class="s1">&#39;n_rho&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_rho</span><span class="p">,</span>
+<span class="linenos">61</span>            <span class="s1">&#39;n_avg&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_avg</span><span class="p">,</span>
+<span class="linenos">62</span>            <span class="s1">&#39;H_e&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">H_e</span><span class="p">,</span>
+<span class="linenos">63</span>            <span class="s1">&#39;n_brk&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_brk</span><span class="p">,</span>
+<span class="linenos">64</span>            <span class="s1">&#39;k&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">K</span><span class="p">,</span>
+<span class="linenos">65</span>            <span class="s1">&#39;W&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">W</span><span class="p">,</span>
+<span class="linenos">66</span>            <span class="s1">&#39;N&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">N</span><span class="p">,</span>
+<span class="linenos">67</span>        <span class="p">}</span>
+<span class="linenos">68</span>        <span class="k">return</span> <span class="n">result</span>
+<span class="linenos">69</span>        
+<span class="linenos">70</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">71</span>    <span class="kn">import</span> <span class="nn">pint</span>
+<span class="linenos">72</span>    <span class="n">u</span> <span class="o">=</span> <span class="n">pint</span><span class="o">.</span><span class="n">UnitRegistry</span><span class="p">()</span>
+<span class="linenos">73</span>    <span class="n">w</span> <span class="o">=</span> <span class="n">Wart</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+<span class="linenos">74</span>    <span class="n">w</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+<span class="linenos">75</span>    <span class="n">p</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">get_properties</span><span class="p">()</span>
+<span class="linenos">76</span>    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">p</span><span class="p">:</span>
+<span class="linenos">77</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">p</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="linenos">78</span>
+<span class="linenos">79</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motor Volume = </span><span class="si">{</span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;m_v&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.6e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>And, here is the result:</p>
@@ -238,7 +250,11 @@ m_rho = 34.92527615334633 gram / inch ** 3
 t = 618.0 second
 n_rho = 6.727868852459015e-06 inch ** 3 / turn
 n_avg = 355.3398058252427 turn / minute
-H_e = 0.7290192113245703 dimensionless
+H_e = 0.7290192113245703 foot
+n_brk = 3727 turn
+k = 45.258469222358436 gram ** 0.5 * turn / inch ** 1.5
+W = 0.04777777777777778 gram / inch
+N = 3726.9999999999995 turn
 Motor Volume = 2.462400e-02 inch ** 3
 </pre></div>
 </div>
@@ -249,7 +265,7 @@ Motor Volume = 2.462400e-02 inch ** 3
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="testing.html" class="btn btn-neutral float-left" title="Test Page - not for publication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="winding-the-motor.html" class="btn btn-neutral float-left" title="Winding the Motor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="zbibliography.html" class="btn btn-neutral float-right" title="Bibliography" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Test Page - not for publication &mdash; mmR2T3 0.1.0 documentation</title>
+  <title>Winding the Motor &mdash; mmR2T3 0.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
@@ -19,7 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Bibliography" href="zbibliography.html" /> 
+    <link rel="next" title="Hodson’s Flight Data" href="hodson-flight-data.html" />
+    <link rel="prev" title="Stretching the Motor" href="stretching-the-motor.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -45,10 +46,13 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="testing-rubber.html">Testing Rubber</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stretching-the-motor.html">Stretching the Motor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="winding-the-motor.html">Winding the Motor</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Winding the Motor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#d-c-motor-selection">D.C Motor Selection</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="hodson-flight-data.html">Hodson’s Flight Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="zbibliography.html">Bibliography</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Test Page - not for publication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Test Page - not for publication</a></li>
 </ul>
 
         </div>
@@ -65,9 +69,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Test Page - not for publication</li>
+      <li class="breadcrumb-item active">Winding the Motor</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/rst/testing.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/rst/winding-the-motor.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -75,24 +79,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="test-page-not-for-publication">
-<h1>Test Page - not for publication<a class="headerlink" href="#test-page-not-for-publication" title="Link to this heading"></a></h1>
-<div class="math" id="equation-euler">
-<p><span class="eqno">(1)<a class="headerlink" href="#equation-euler" title="Link to this equation"></a></span><img src="../_images/math/07678233cd1c6536c98f0985bdb0d4eac996ea20.png" alt="e^{i\pi} + 1 = 0"/></p>
-</div><p>Euler’s identity, equation <a class="reference internal" href="#equation-euler">(1)</a>, was elected one of the most
-beautiful mathematical formulas.</p>
-<div class="figure" id="id2" style="text-align: left"><p><img  src="../_images/tikz-a2b4cec0987802fd3f9b5d9d1fbdd64020e114cb.png" alt="Figure made with TikZ" /></p>
-<p><span class="caption-text">An Example TikZ Directive with Caption</span></p>
-</div><p>See <span id="id1">[<a class="reference internal" href="zbibliography.html#id3" title="Roie Black. Predicting indoor flight times using python. NFFS Symposium, pages 65–84, 2022.">Bla22</a>]</span> for more information.</p>
-<p>Here is a basic control setup:</p>
-<img alt="../_images/tb6600-nema23-rpi.png" src="../_images/tb6600-nema23-rpi.png" />
+  <section id="winding-the-motor">
+<h1>Winding the Motor<a class="headerlink" href="#winding-the-motor" title="Link to this heading"></a></h1>
+<p>Once we can generate the stretching force on the motor, we need to begin winding. Here we have options: we could use another stepper motor, or a simple electric motor mounted on the sliding platform. The nice thing about using a stepper motor is that we know exactly how the shaft is moving. With a simple D.C. motor, we would need a way to count the turns we are generating. Common solutions to that problem involve mounting some kind of optical sensor to count the turns. FOr simplicity, I elected to use the D.C motor option, since I had an available devicem and the windong speed is higher than I can get with a stepper motor.</p>
+<section id="d-c-motor-selection">
+<h2>D.C Motor Selection<a class="headerlink" href="#d-c-motor-selection" title="Link to this heading"></a></h2>
+<p>I have purchased a number of motors for my student projects over the years. One
+of my favorite suppliers for these is <a class="reference external" href="https://www.pololu.com/">Pololu Robotics and Electronics</a>. The motor I selected for my test device is this:</p>
+<img alt="../_images/gearmotor.jpg" class="align-center" src="../_images/gearmotor.jpg" />
+<p>(<a class="reference external" href="https://www.pololu.com/product/4758">reference</a></p>
+<p>There is one concern with using this motor directly to wind the motor.
+Depending on the tension in the motor, the pull on the shaft might cause
+excess internal friction. Since I have no idea what kinds of bearings are
+inside the gearbox, it might be necessary to use this motor to drive a hook that
+can stand the tension. This is easy enough to do with more gears and a simple
+bearing, but it complicates the design.</p>
+<p>This particular motor has an encoder that will let us count the revolutions of the drive shaft, and runs on 12 volts. Obviously, we will need to get both power and encoder signals out to the tester computer setup using a cable assembly capable of following the motor as it slides across the linear rail. More on this later.</p>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="zbibliography.html" class="btn btn-neutral float-left" title="Bibliography" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="stretching-the-motor.html" class="btn btn-neutral float-left" title="Stretching the Motor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="hodson-flight-data.html" class="btn btn-neutral float-right" title="Hodson’s Flight Data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

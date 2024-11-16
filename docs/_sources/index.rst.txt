@@ -15,8 +15,11 @@ documentation for details.
    :maxdepth: 2
    :caption: Contents:
 
-   rst/testing
+   rst/testing-rubber
+   rst/stretching-the-motor
+   rst/winding-the-motor
    rst/hodson-flight-data
    rst/zbibliography
  
+   rst/testing
 
